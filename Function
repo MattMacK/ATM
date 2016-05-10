@@ -1,0 +1,9 @@
+I am trying to create a virtual ATM using OOP.
+
+What is needed:
+Interface with customer
+validate user w/ credentials
+Add Funds
+Withdraw funds
+print funds
+validate funds
