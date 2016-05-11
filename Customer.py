@@ -1,8 +1,14 @@
 class Customer:
-    def __init__(self, name, account, funds=0):
+
+
+
+    def __init__(self, name, account, funds=0.0):
         self.name = name
         self.account = account
         self.funds = funds
+
+    def return_name(self):
+        return self.name
 
     def print_funds(self):
         print(self.funds)
@@ -12,8 +18,8 @@ class Customer:
         print("Current Balance: ", self.funds)
 
     def deposit_funds(self):
-        amount = input("Please input the amount of money you want to enter: ")
-        self.funds += float(amount)
+        amount = float(input("Please input the amount of money you want to enter: "))
+        self.funds += amount
 
     def withdraw_funds(self):
         done = False
@@ -21,10 +27,10 @@ class Customer:
             print("You currently have $", self.funds)
             amount = input("How much would you like to withdraw: ")
             if not amount.isalpha():
-                if float(amount) > self.funds:
+                if amount > self.funds:
                     print("Insufficient funds")
-                elif float(amount) <= self.funds:
-                    self.funds -= float(amount)
+                elif amount <= self.funds:
+                    self.funds -= amount
                     print("You have withdrawn $", amount, '.')
                     print("Your remaining balance is $", self.funds)
                     done = True
